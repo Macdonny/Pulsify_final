@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements
     int randomNumber = 0, r, g, b;
     private ImageButton btnSpeak;
     private TextView txtText;
+    boolean show = false;
+    Button b1,b2,b3;
 
     //--------------------------------------------------
 
@@ -104,6 +106,23 @@ public class MainActivity extends AppCompatActivity implements
         AuthenticationClient.openLoginActivity(this, REQUEST_CODE, request);
 
         //--------------------------------------------------
+
+        b2= (Button) findViewById(R.id.stop);
+        b3= (Button) findViewById(R.id.play);
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPlayer.resume(null);
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPlayer.pause(null);
+            }
+        });
 
         pulseHandler = new ImplementPulseHandler();
 
@@ -194,16 +213,6 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
-    public static Drawable LoadImageFromWebOperations(String url) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src name");
-            return d;
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
     //----------------------------------------------------------------------------------------------------
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -255,81 +264,69 @@ public class MainActivity extends AppCompatActivity implements
                         case "excited": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Fire);
                             mPlayer.playUri(null, spotifyModel.excited, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "FIRE", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "angry": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Canvas);
                             mPlayer.playUri(null, spotifyModel.angry, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "CANVAS", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "relax": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Firefly);
                             mPlayer.playUri(null, spotifyModel.relaxed, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "FIREFLY", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "crazy": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Firework);
                             mPlayer.playUri(null, spotifyModel.crazy, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "FIREWORK", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "sleepy": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Hourglass);
                             mPlayer.playUri(null, spotifyModel.sleepy, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "HOURGLASS", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "thoughtful": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Rain);
                             mPlayer.playUri(null, spotifyModel.thoughtful, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "RAIN", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "jazzy": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Ripple);
                             mPlayer.playUri(null, spotifyModel.jazzy, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "RIPPLE", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "sparkle": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Star);
                             mPlayer.playUri(null, spotifyModel.sparkle, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "STAR", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "dance": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Traffic);
                             mPlayer.playUri(null, spotifyModel.dance, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "TRAFFIC", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "do something": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Wave);
                             mPlayer.playUri(null, spotifyModel.mario, 0, 0);
-                            Toast.makeText(getApplicationContext(), "LED pattern shuffled successfully to " + "WAVE", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "pause": {
                             mPlayer.pause(null);
-                            Toast.makeText(getApplicationContext(), "Paused", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         case "resume": {
                             pulseHandler.SetLEDPattern(PulseThemePattern.PulseTheme_Wave);
                             mPlayer.resume(null);
-                            Toast.makeText(getApplicationContext(), "Resumed", Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }
                     break;
+
                 }
 
             }
         }
-
     }
 
     @Override
