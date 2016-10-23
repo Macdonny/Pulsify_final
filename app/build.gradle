@@ -36,5 +36,6 @@ dependencies {
     compile 'com.spotify.sdk:spotify-player-beta23-noconnect-2.20b@aar'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:cardview-v7:24.0.+'
+    compile project(':libPulseSDK')
     testCompile 'junit:junit:4.12'
 }
