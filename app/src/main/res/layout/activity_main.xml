@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.pulsify.my.pulsify.MainActivity"
+    android:background="@color/colorSecondary">
+
+    <!-- A CardView that contains a TextView -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtText"
+        android:layout_below="@+id/card_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center_vertical"
+        card_view:cardCornerRadius="4dp"
+        android:layout_width="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:layout_height="250dp">
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="62dp"
+            android:layout_above="@+id/txtText"
+            android:layout_centerHorizontal="true" />
+
+    </android.support.v7.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/btnSpeak"
+        android:contentDescription=""
+        android:src="@android:drawable/ic_btn_speak_now"
+        android:theme="@style/AlertDialog.AppCompat.Light"
+        android:elevation="0dp"
+        android:baselineAlignBottom="false"
+        android:radius="20dp"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/txtText"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
