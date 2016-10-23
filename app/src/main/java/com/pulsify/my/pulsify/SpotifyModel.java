@@ -12,7 +12,7 @@ public class SpotifyModel {
     public String sleepy = "spotify:track:2Lyw5hRHymLpzWBrG056Lz";
     public String thoughtful = "spotify:track:53KU8BrYZuxZOb3jqDm4ix";
     public String jazzy = "spotify:track:1VKsbTJ78G5bnfyoPz46LA";
-    public String calm = "spotify:track:28VwmnD29YNEMh6OwI2uLH";
+    public String sparkle = "spotify:track:28VwmnD29YNEMh6OwI2uLH";
     public String dance = "spotify:track:1lItf5ZXJc1by9SbPeljFd";
     public String mario = "spotify:track:1oLFqOLGARvpOoKANj1wDa";
     public String peter = "spotify:track:0x32ZUWjGSXOZXU7gMduuP";
